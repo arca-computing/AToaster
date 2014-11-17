@@ -1,0 +1,30 @@
+{
+  "name": "AToaster",
+  "version": "1.0.0",
+  "authors": [
+    "mgohin <mgohin@arca-computing.fr>"
+  ],
+  "description": "Angular directive to show a toaster to inform the user",
+  "main": ["dist/AToaster.min.js", "dist/AToaster.css"],
+  "keywords": [
+    "angular",
+    "directive",
+    "toaster",
+    "success",
+    "error",
+    "wait",
+    "loading"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.21",
+    "angular-animate": "1.2.21"    
+  }
+}
