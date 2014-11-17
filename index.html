@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/glyphicons.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/AToaster.css" media="screen" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="javascripts/angular-animate.min.js"></script>
+    <script type="text/javascript" src="javascripts/AToaster.min.js"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
+    <title>AToaster by arca-computing</title>
+  </head>
+
+  <body ng-controller="demoController">
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>AToaster</h1>
+          <h3>Yet another angular toaster, but made with love</h3>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/arca-computing/AToaster" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h2><a class="anchor"><span class="octicon octicon-link"></span></a>What is AToaster ?</h2>
+
+          <p>AToaster is an Angular directive to show a simple toaster to give the user an information : success, error, warning, loading</p>
+
+          <h2><a class="anchor"><span class="octicon octicon-link"></span></a>Get it bower style</h2>
+          <pre><code>bower install a-toaster</code></pre>
+
+          <h2><a class="anchor"><span class="octicon octicon-link"></span></a>Get it git style</h2>
+          <pre><code>git clone https://github.com/arca-computing/AToaster.git</code></pre>
+
+
+          <h2><a class="anchor"><span class="octicon octicon-link"></span></a>Time to use it</h2>
+          <h3><a class="anchor"><span class="octicon octicon-link"></span></a>Include files</h3>
+          <p>If you are using bower and grunt, you can use <a href="https://github.com/taptapship/wiredep">wiredep</a> to auto include dependencies in your html file. If you want to include files manually, add those two :</p>
+          <pre><code>&lt;script type="text/javascript" src="AToaster.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="AToaster.css"/&gt;</code></pre>
+
+          <h3><a class="anchor"><span class="octicon octicon-link"></span></a>Add it to your angular app</h3>          
+          <pre><code>var app = angular.module('myApp', ['AToaster']);</code></pre>
+
+          <h3><a class="anchor"><span class="octicon octicon-link"></span></a>Add it to your angular controller</h3>
+          <p>This service is used to call some functions. They will manage the communication with the directive.</p>
+          <pre><code>app.controller('MyController', ['...', 'service.toaster', '...', function(..., toaster, ...){</code></pre>
+          
+
+          <h3><a class="anchor"><span class="octicon octicon-link"></span></a>Add it in your html</h3>
+          <p>Add it in your html under your controller declaration - You can add it anywhere but it must be inside a controller  declaration in html</p>
+
+          <pre><code>&lt;div ng-controller="MyController"&gt;
+  &lt;toaster-container/&gt;
+&lt;/div&gt;</code></pre>
+<div><toaster-container/></div>          
+
+          <h3><a class="anchor"><span class="octicon octicon-link"></span></a>Pop it !</h3>          
+          <a ng-click="popSuccess()">pop success</a>
+          <pre><code>toaster.pop('success', 'Done', 'Image upload done', null);</code></pre>
+          <a ng-click="popError()">pop error</a>
+          <pre><code>toaster.pop('error', 'Server error', 'an error occurred on the server', null);</code></pre>
+          <a ng-click="popWait()">pop wait</a>
+          <pre><code>toaster.pop('wait', 'File uploading', 'upload in progress', 0);
+    $timeout(function(){
+      toaster.clearAndPop('success', 'File Uploading', 'file uploaded', null);
+    }, 3000);</code></pre>
+          <a ng-click="popWarning()">pop warning</a>
+          <pre><code>toaster.pop('warning', 'Server info', 'server maintenance from 1PM to 3PM', null);</code></pre>
+
+          <h3><a class="anchor"><span class="octicon octicon-link"></span></a>How it works</h3>          
+          <p>pop function will pop and stack on top</p>
+          <pre><code>toaster.pop(type, title, message, timeout);</code></pre>          
+          
+          <p>clear will remove all toasts</p>
+          <pre><code>toaster.clear();</code></pre>
+          
+          <p>clearAndPop will clear all toasts then pop the new one</p>
+          <pre><code>toaster.clearAndPop(type, title, message, timeout);</code></pre>
+          
+          <p>Type : 'success' 'error' 'warning' 'wait'</p>
+          <p>Title and Message : heuuu title and message :)</p>
+          <p>Timeout : 0 -> infinite (nice for wait type), null -> default timeout, else timeout in milliseconds</p>
+
+        </section>        
+
+        <footer>
+          AToaster is maintained by <a href="https://github.com/arca-computing">arca-computing</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+
+      </div>
+    </div>
+    <toaster-container />
+  </body>
+</html>
