@@ -1,5 +1,5 @@
 #What is AToaster ?
-MultipleDatePicker is an Angular directive to show a toaster to inform the user. More infos on the demo page.
+AToaster is an Angular directive to show a toaster to inform the user. More infos on the demo page.
 
 #Warning
 The current code is using bootstrap glyphicon font, you can change classes in code to use your own classes for icons.
