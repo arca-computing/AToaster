@@ -90,11 +90,10 @@ angular.module('AToaster', ['ngAnimate'])
                         }
                     },
                     addToast = function (toast) {
-                        setToastTimeout(toast);
-                        scope.toasts.unshift(toast);
-                        if(!scope.$$phase) {
-                            scope.$apply();
-                        }
+                        $timeout(function(){
+                            setToastTimeout(toast);
+                            scope.toasts.unshift(toast);
+                        });                        
                     };
 
                 scope.removeToastFromUI = function (toast) {
