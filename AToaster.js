@@ -80,7 +80,7 @@ angular.module('AToaster', ['ngAnimate'])
                         scope.toasts = [];
                     },
                     setToastTimeout = function (toast) {
-                        if (toast.timeout === null) {
+                        if (typeof toast.timeout === 'undefined') {
                             toast.timeout = mergedConfig.timeout;
                         }
                         if (toast.timeout > 0) {
