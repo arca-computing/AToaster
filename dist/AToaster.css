@@ -6,114 +6,79 @@
   line-height: 0;
   height: 0;
 }
-
 .clearfix {
   display: block;
 }
-
 html[xmlns] .clearfix {
   display: block;
 }
-
 * html .clearfix {
   height: 1%;
 }
-
 .toaster-container {
   position: fixed;
   top: 10px;
   right: 20px;
   z-index: 999999;
 }
-
-.toaster-container>div.ng-leave.ng-leave-active,
+.toaster-container > div.ng-leave.ng-leave-active,
 .toaster-container div.ng-enter {
   opacity: 0;
 }
-
-.toaster-container>div.ng-enter.ng-enter-active,
+.toaster-container > div.ng-enter.ng-enter-active,
 .toaster-container div.ng-leave {
-  opacity: .9;
+  opacity: 0.9;
 }
-
-.toaster-container>div.ng-enter,
+.toaster-container > div.ng-enter,
 .toaster-container div.ng-leave {
-  transition: 1000ms cubic-bezier(0.25,.25,.75,.75) all;
+  transition: 1000ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
 }
-
-.toaster-container>div.fast.ng-enter,
+.toaster-container > div.fast.ng-enter,
 .toaster-container div.fast.ng-leave {
-  transition: 400ms cubic-bezier(0.25,.25,.75,.75) all;
+  transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
 }
-
-.toaster-container>div.success {
+.toaster-container > div.success {
   background-color: #2B803E;
 }
-
-.toaster-container>div.error {
+.toaster-container > div.error {
   background-color: #801F15;
 }
-
-.toaster-container>div.warning {
+.toaster-container > div.warning {
   background-color: #AA7039;
 }
-
-.toaster-container>div.wait {
+.toaster-container > div.wait {
   background-color: #255E69;
 }
-
-.toaster-container>div:hover {
+.toaster-container > div:hover {
   cursor: pointer;
 }
-
-.toaster-container>div {
+.toaster-container > div {
   color: #fff;
   padding: 10px 20px 10px 10px;
-  opacity: .9;
+  opacity: 0.9;
   margin-bottom: 10px;
 }
-
-.toaster-container>div .icon {
+.toaster-container > div .icon {
   float: left;
   margin: 0 10px;
   font-size: 20px;
   padding-top: 10px;
 }
-
-.toaster-container>div .icon i.spin {
-  -webkit-animation: spin 2s infinite linear;
+.toaster-container > div .icon i.spin {
   animation: spin 2s infinite linear;
 }
-
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes spin {
   from {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   to {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-
-.toaster-container>div .infos {
+.toaster-container > div .infos {
   float: left;
 }
-
-.toaster-container>div .infos .title {
-  font-weight: 700;
+.toaster-container > div .infos .title {
+  font-weight: bold;
   font-size: 1.2em;
 }
